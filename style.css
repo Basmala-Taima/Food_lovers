@@ -195,7 +195,7 @@ header .text a:hover{
 .menu .items .item .food .text p{font-size: 24px; color: #000;}
 .menu .items .item .food .text .con p{color: rgba(204, 146, 0, 0.752); font-weight: 700;}
 .menu .button{
-    width: 250px;
+    width: 300px;
     background-color: rgba(204, 146, 0, 0.752);
     padding: 20px;
     border-radius: 25px;
