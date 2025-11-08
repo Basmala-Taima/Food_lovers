@@ -201,7 +201,7 @@ header .text a:hover{
     border-radius: 25px;
     font-size: 18px;
     text-align: center ;
-    transition: all 1s ease-in-out;
+    transition: all 1s ease;
 }
 .menu .button:hover{
     width: 350px;
