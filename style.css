@@ -236,7 +236,7 @@ header .text a:hover{
 .daytime .items .item h3{font-size: 45px;}
 .gallery{
     width: 100%;
-    height: auto;
+    height: 100vh;
     color: white;
     font-size: 40px;
     background: url(images/offer-background.jpg) , center , center/cover , no-repeat;
