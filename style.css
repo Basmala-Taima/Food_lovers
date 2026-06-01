@@ -90,48 +90,86 @@ header .text a:hover{
     font-size: 26px;
 }
 .about .row .img{ width: 40%; height: 450px;}
-.offer{
-    width: 100%; height: 100vh;
-    background: url(images/offer-background.jpg) , center , center/cover , no-repeat;
-    color: white;
-    display: flex;
+.offer {
+  width: 100%;
+  height: 100vh;
+  background: url(images/offer-background.jpg), center, center/cover, no-repeat;
+  color: white;
+  display: flex;
+  position: relative;
 }
-.offer .content{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    gap: 40px;
+
+.offer .title {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding-bottom: 25px;
 }
-.offer .title{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px;
-    
+
+.offer .title h2 {
+  color: rgb(202, 153, 53);
+  font-size: 40px;
 }
-.offer .title h2{ color: rgb(202, 153, 53); font-size: 40px;}
-.offer .items{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px;
+
+.wrapper {
+  width: 100%;
+  overflow-x: hidden;
 }
-.offer .items .item{
-    width: 28%; height: 350px;
-    text-align: center;
-    font-size: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px;
+.offer .offers-items {
+  display: flex;
+  transition: 1s ease-in-out;
 }
-.offer .items .item img{width: 180px;}
-.offer .items .item p{font-size: 14px;}
-.offer .items .item .price span{color:rgb(202, 153, 53) ;}
-.offer .items .item .price{font-size: 20px; color: gray;}
+
+.offer .offers-items .offer-item {
+  min-width: 100%;
+  height: 450px;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  /* gap: 20px; */
+}
+.offer .offers-items .offer-item img {
+  width: 250px;
+}
+.offer .offers-items .offer-item p {
+  font-size: 14px;
+}
+
+.offer .offers-items .offer-item .price span {
+  color: rgb(202, 153, 53);
+}
+
+.offer .offers-items .offer-item .price {
+  font-size: 20px;
+  color: gray;
+}
+.offer .prev,
+.next {
+  background-color: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  top: 50%;
+  transform: translateY(50%);
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: aliceblue;
+}
+.offer .prev:hover,.next:hover{
+  background-color: rgba(0, 0, 0, 0.8);
+  box-shadow: 0 10px 20px rgba(255, 255, 255, 0.3);
+}
+.offer .prev {
+  left: 15px;
+}
+.offer .next {
+  right: 15px;
+}
 .menu{
     width: 100%; height: auto;
     padding: 40px 0;
@@ -155,28 +193,29 @@ header .text a:hover{
 }
 .menu .title h2{font-size: 40px;}
 .menu .title p{color: gray;}
-.menu .items{
+.menu .menu-items{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
     gap: 40px;
 }
-.menu .items .item{
-    width: 40%;
-    display: flex;
-    flex-direction: column;
+.menu .menu-items .menu-item{
+width: 40%;
+display: flex;
+flex-direction: column;
     justify-content: space-between;
     align-items: center;
     gap: 30px;
 }
-.menu .items .item .food{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.menu .menu-items .menu-item .food{
+display: flex;
+justify-content: space-between;
+align-items: center;
     gap: 30px;
 }
-.menu .items .item .food .img img{width: 100px; border-radius: 50%;}
-.menu .items .item .food .text{
+.menu .menu-items .menu-item .food .img img{width: 100px; border-radius: 50%;}
+.menu .menu-items .menu-item .food .text{
     width: 500px;
     display: flex;
     flex-direction: column;
@@ -184,7 +223,7 @@ header .text a:hover{
     align-items: center;
     gap: 10px;
 }
-.menu .items .item .food .text .con{
+.menu .menu-items .menu-item .food .text .con{
     width: 500px;
     display: flex;
     justify-content: space-between;
@@ -193,8 +232,8 @@ header .text a:hover{
     border-bottom: 3px dashed gray;
     padding: 15px 0;
 }
-.menu .items .item .food .text p{font-size: 24px; color: #000;}
-.menu .items .item .food .text .con p{color: rgba(204, 146, 0, 0.752); font-weight: 700;}
+.menu .menu-items .menu-item .food .text p{font-size: 24px; color: #000;}
+.menu .menu-items .menu-item .food .text .con p{color: rgba(204, 146, 0, 0.752); font-weight: 700;}
 .menu .button{
     width: 300px;
     background-color: rgba(204, 146, 0, 0.752);
@@ -250,21 +289,69 @@ header .text a:hover{
     align-items: center;
     gap: 35px;
 }
-.gallery .images{
+.gallery .images-gallery{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     flex-wrap: wrap;
     gap: 40px;;
 }
-.gallery .images img{
+.gallery .images-gallery img{
     width: 350px;
     height: 250px;
     border-radius: 15px;
     opacity: 0.5;
     transition: all 2s ease 1s;
 }
-.gallery .images img:hover{opacity: 1; width: 400px; cursor:zoom-in;}
+.gallery .images-gallery img:hover{opacity: 1; width: 400px; cursor:zoom-in;}
+#boxContainer{
+    width: 100%;
+    height: 100vh;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    top:0 ;
+    left:0;
+    z-index: 999;
+    cursor: pointer;
+}
+#boxItem{
+    width: 80%;
+    height: 80%;
+    border-radius: 15px;
+    cursor:default;
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#prev,#next,#close{
+    color: rgb(250, 240, 200);
+    font-size: 28px;
+    position: absolute;
+    transition: all 1s ease-in-out;
+}
+#prev:hover,#next:hover,#close:hover{
+    color: rgb(255, 197, 51);
+    cursor: pointer;
+}
+#prev{
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+}
+#next{
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+}
+#close{
+    top: 25px;
+    right: 20px;
+    transform: translateY(-10%);
+}
 .contact{
     width: 100%;
     height: 100vh;
@@ -369,19 +456,16 @@ footer span{font-weight: 800;}
     .about .row .text{width: 100%; height: auto; }
     .about .row .text p{font-size: 12px; padding-left: 5px;}
     .about .row .img{display: none;}
-    .offer{height: auto;}
-    .offer .content{padding: 40px 0;}
-    .offer .title h2{ font-size: 25px;}
-    .offer .items{flex-direction: column; gap: 10px;}
-    .offer .items .item{width: 100%; height: auto;}
+    .offer .title{text-align: center;}
+    .offer .offer-item{text-align: center;}
     .menu .content{padding: 50px 0;}
     .menu .title h2{font-size: 35px;}
-    .menu .items {flex-direction: column;}
-    .menu .items .item{width: 100%;}
-    .menu .items .item .food{width:100%; }
-    .menu .items .item .food .text{width: 100%; }
-    .menu .items .item .food .text p{font-size: 10px;}
-    .menu .items .item .food .text .con{width: 100%; font-size: 12px; padding-right:5px;}
+    .menu .menu-items {flex-direction: column;}
+    .menu .menu-items .menu-item{width: 100%;}
+    .menu .menu-items .menu-item .food{width:100%; }
+    .menu .menu-items .menu-item .food .text{width: 100%; }
+    .menu .menu-items .menu-item .food .text p{font-size: 10px;}
+    .menu .menu-items .menu-item .food .text .con{width: 100%; font-size: 12px; padding-right:5px;}
     .menu .button{width: 150px; padding: 10px; font-size: 12px; border-radius: 10px;}
     .menu .button:hover{ width: 200px; background: linear-gradient(rgba(204, 146, 0, 0.511) , rgba(204, 146, 0, 0.511)); cursor: pointer; font-size: 15px; }
     .daytime .items{flex-direction: column;}
@@ -413,18 +497,15 @@ footer span{font-weight: 800;}
     .about .row .text{width: 100%; height: auto; font-size: 29px;}
     .about .title h2{font-size: 40px; text-align: center;}
     .about .row .img{display: none;}
-    .offer{height: auto;}
-    .offer .content{padding: 40px 0;}
-    .offer .items{flex-direction: column; gap: 10px;}
-    .offer .items .item{width: 100%; height: auto;}
+    .offer .offer-item{text-align: center;}
     .menu{height: auto;}
     .menu .content{padding: 50px 0;}
-    .menu .items {flex-direction: column;}
-    .menu .items .item{width: 100%;}
-    .menu .items .item .food{width:100%; }
-    .menu .items .item .food .text{width: 100%; }
-    .menu .items .item .food .text p{font-size: 16px;}
-    .menu .items .item .food .text .con{width: 100%;}
+    .menu .menu-items {flex-direction: column;}
+    .menu .menu-items .menu-item{width: 100%;}
+    .menu .menu-items .menu-item .food{width:100%; }
+    .menu .menu-items .menu-item .food .text{width: 100%; }
+    .menu .menu-items .menu-item .food .text p{font-size: 16px;}
+    .menu .menu-items .menu-item .food .text .con{width: 100%;}
     .menu .button{width: 200px; padding: 10px; font-size: 15px; border-radius: 10px;}
     .menu .button:hover{ width: 260px; background: linear-gradient(rgba(204, 146, 0, 0.511) , rgba(204, 146, 0, 0.511)); cursor: pointer; font-size: 20px; }
     .daytime .items{flex-direction: column;}

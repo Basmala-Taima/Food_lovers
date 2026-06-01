@@ -9,8 +9,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700;800;900&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="style.css">
+    <script src="JS/menu.js"></script>
 </head>
 <body>
     <header>
@@ -18,11 +18,11 @@
             <nav>
                 <img src="images/logo.png" alt="logo">
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Menu</a></li>
-                    <li><a href="#">Gallery</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
             <div class="text">
@@ -33,7 +33,7 @@
         </div>
     </header>
     <main>
-        <section class="about">
+        <section class="about" id="about">
             <div class="container">
                 <div class="content">
                     <div class="title">
@@ -53,190 +53,91 @@
         </section>
         <section class="offer">
             <div class="container">
-                <div class="content">
-                    <div class="title">
-                        <h2>Our Special Offers</h2>
-                        <p>More than 25+ years of experience</p>
-                    </div>
-                        <div class="items">
-                            <div class="item">
-                                <img src="images/offer1.png" alt="Pasta">
-                                <h3>Quattro Pasta</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam, quibusdam.</p>
-                                <p class="price"><del>$55.00</del> <span>$18.00</span></p>
-                            </div>
-                            <div class="item">
-                                <img src="images/offer2.png" alt="Pasta">
-                                <h3>Vegetarian Pasta</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam, quibusdam.</p>
-                                <p class="price"><del>$55.00</del> <span>$18.00</span></p>
-                            </div>
-                            <div class="item">
-                                <img src="images/offer3.png" alt="Pasta">
-                                <h3>Gluten-Free Pasta</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam, quibusdam.</p>
-                                <p class="price"><del>$55.00</del> <span>$18.00</span></p>
-                            </div>
+                <div class="title">
+                    <h2>Our Special Offers</h2>
+                    <p>More than 25+ years of experience</p>
+                </div>
+                <div class="wrapper">
+                    <div class="offers-items">
+                        <div class="offer-item">
+                            <img src="images/offer1.png" alt="Pasta" />
+                            <h3>Quattro Pasta</h3>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam,quibusdam.
+                            </p>
+                            <p class="price"><del>$55.00</del> <span>$18.00</span></p>
                         </div>
-                </div>        
+                        <div class="offer-item">
+                            <img src="images/offer2.png" alt="Pasta" />
+                            <h3>Vegetarian Pasta</h3>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam,quibusdam.
+                            </p>
+                            <p class="price"><del>$55.00</del> <span>$18.00</span></p>
+                        </div>
+                        <div class="offer-item">
+                            <img src="images/offer3.png" alt="Pasta" />
+                            <h3>Gluten-Free Pasta</h3>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam,quibusdam.
+                            </p>
+                            <p class="price"><del>$55.00</del> <span>$18.00</span></p>
+                        </div>
+                    </div>
+                </div>
             </div>
+            <button type="button" class="prev">&lt;</button>
+            <button type="button" class="next">&gt;</button>
         </section>
-        <section class="menu">
+        <section class="menu" id="menu">
             <div class="container">
                 <div class="content">
                     <div class="title">
                         <h2>Our Special Menu</h2>
                         <p>Order two and get third for free</p>
                     </div>
-                    <div class="items">
-                        <div class="item">
-                            <div class="food">
-                                <div class="img">
-                                    <img src="images/food1.png" alt="Food">
-                                </div>
-                                <div class="text">
-                                    <div class="con">
-                                        <h4>LASAL CHEESE</h4>
-                                        <p>$18.00</p>
+                    <div class="menu-items">
+                        <script>
+                            for (let i = 0; i < 6 ; i++) {
+                                document.write(`
+                                    <div class="menu-item">
+                                        <div class="food">
+                                            <div class="img">
+                                                <img src=${menuItems[i].img} alt="Food">
+                                            </div>
+                                            <div class="text">
+                                                <div class="con">
+                                                    <h4>${menuItems[i].name}</h4>
+                                                    <p>${menuItems[i].price}</p>
+                                                </div>
+                                                <p>${menuItems[i].discription}</p>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At, explicabo.</p>
-                                </div>
-                            </div>
-                            <div class="food">
-                                <div class="img">
-                                    <img src="images/food2.png" alt="Food">
-                                </div>
-                                <div class="text">
-                                    <div class="con">
-                                        <h4>JUMBO CRAB SHRIMP</h4>
-                                        <p>$24.00</p>
+                                `)
+                            }
+                        </script>
+                        <script>
+                            for (let i = 6; i < menuItems.length; i++) {
+                                document.write(`
+                                    <div class="menu-item">
+                                        <div class="food">
+                                            <div class="img">
+                                                <img src=${menuItems[i].img} alt="Food">
+                                            </div>
+                                            <div class="text">
+                                                <div class="con">
+                                                    <h4>${menuItems[i].name}</h4>
+                                                    <p>${menuItems[i].price}</p>
+                                                </div>
+                                                <p>${menuItems[i].discription}</p>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At, explicabo.</p>
-                                </div>
-                            </div>
-                            <div class="food">
-                                <div class="img">
-                                    <img src="images/food3.png" alt="Food">
-                                </div>
-                                <div class="text">
-                                    <div class="con">
-                                        <h4>KOKTAIL JUICE</h4>
-                                        <p>$12.00</p>
-                                    </div>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At, explicabo.</p>
-                                </div>
-                            </div>
-                            <div class="food">
-                                <div class="img">
-                                    <img src="images/food4.png" alt="Food">
-                                </div>
-                                <div class="text">
-                                    <div class="con">
-                                        <h4>CAPO STEAK</h4>
-                                        <p>$60.00</p>
-                                    </div>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At, explicabo.</p>
-                                </div>
-                            </div>
-                            <div class="food">
-                                <div class="img">
-                                    <img src="images/food5.png" alt="Food">
-                                </div>
-                                <div class="text">
-                                    <div class="con">
-                                        <h4>ORGANIC FRUIT SALAD</h4>
-                                        <p>$8.00</p>
-                                    </div>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At, explicabo.</p>
-                                </div>
-                            </div>
-                            <div class="food">
-                                <div class="img">
-                                    <img src="images/food6.png" alt="Food">
-                                </div>
-                                <div class="text">
-                                    <div class="con">
-                                        <h4>CHEESE PIZZA</h4>
-                                        <p>$18.00</p>
-                                    </div>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At, explicabo.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="food">
-                                <div class="img">
-                                    <img src="images/food7.jpeg" alt="Food">
-                                </div>
-                                <div class="text">
-                                    <div class="con">
-                                        <h4>KOFTA MEAT</h4>
-                                        <p>$40.00</p>
-                                    </div>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At, explicabo.</p>
-                                </div>
-                            </div>
-                            <div class="food">
-                                <div class="img">
-                                    <img src="images/food8.jpeg" alt="Food">
-                                </div>
-                                <div class="text">
-                                    <div class="con">
-                                        <h4>SPANISH PIES</h4>
-                                        <p>$14.00</p>
-                                    </div>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At, explicabo.</p>
-                                </div>
-                            </div>
-                            <div class="food">
-                                <div class="img">
-                                    <img src="images/food9.jpeg" alt="Food">
-                                </div>
-                                <div class="text">
-                                    <div class="con">
-                                        <h4>CHEESE TOST</h4>
-                                        <p>$6.00</p>
-                                    </div>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At, explicabo.</p>
-                                </div>
-                            </div>
-                            <div class="food">
-                                <div class="img">
-                                    <img src="images/food10.jpeg" alt="Food">
-                                </div>
-                                <div class="text">
-                                    <div class="con">
-                                        <h4>FRUIT SALAD</h4>
-                                        <p>$14.00</p>
-                                    </div>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At, explicabo.</p>
-                                </div>
-                            </div>
-                            <div class="food">
-                                <div class="img">
-                                    <img src="images/food11.jpeg" alt="Food">
-                                </div>
-                                <div class="text">
-                                    <div class="con">
-                                        <h4>CHICKEN SHAWARMA</h4>
-                                        <p>$20.00</p>
-                                    </div>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At, explicabo.</p>
-                                </div>
-                            </div>
-                            <div class="food">
-                                <div class="img">
-                                    <img src="images/food12.jpeg" alt="Food">
-                                </div>
-                                <div class="text">
-                                    <div class="con">
-                                        <h4>MEGA CHEESE PIZZA</h4>
-                                        <p>$30.00</p>
-                                    </div>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At, explicabo.</p>
-                                </div>
-                            </div>
-                        </div>
+                                `)
+                            }
+                        </script>
+                        
                     </div> <!--closing items-->
                     <div class="button">
                         <a href="#">EXPLORE FULL MENU</a>
@@ -270,11 +171,11 @@
                 </div>
             </div>
         </section>
-        <section class="gallery">
+        <section class="gallery" id="gallery">
             <div class="container">
                 <div class="content">
                     <h2>Our Food Gallery</h2>
-                    <div class="images">
+                    <div class="images-gallery">
                         <img src="images/gallery1.jpg" alt="gallery1">
                         <img src="images/gallery2.jpg" alt="gallery2">
                         <img src="images/gallery3.jpg" alt="gallery3">
@@ -285,7 +186,14 @@
                 </div>
             </div>
         </section>
-        <section class="contact">
+        <div id="boxContainer">
+            <div id="boxItem">
+                <i id="close" class="fa-solid fa-circle-xmark"></i>
+                <i id="prev" class="fa-solid fa-circle-left"></i>
+                <i id="next" class="fa-solid fa-circle-right"></i>
+            </div>
+        </div>
+        <section class="contact" id="contact">
             <div class="container">
                 <div class="content">
                     <div class="info">
@@ -314,11 +222,15 @@
                         </div>
                     </div>
                     <div class="form">
-                        <form action="#">
-                            <input type="text" class="input"  placeholder="Full Name">
-                            <input type="email" class="input"  placeholder="Email Addres">
-                            <input type="text" class="input"  placeholder="Subject">
+                        <form id="form" action="#">
+                            <input type="text" class="input" id="name"  placeholder="Full Name">
+                            <div id="name-error" style="color: red; width: 500px; padding-left:5px ;"></div>
+                            <input type="email" class="input" id="email"  placeholder="Email Addres">
+                            <div id="email-error" style="color: red; width: 500px; padding-left:5px ;"></div>
+                            <input type="text" class="input" id="subject"  placeholder="Subject">
+                            <div id="subject-error" style="color: red; width: 500px; padding-left:5px ;"></div>
                             <textarea name="message" class="input"  id="message" placeholder="Message"></textarea>
+                            <div id="message-error" style="color: red; width: 500px; padding-left:5px ;"></div>
                             <button type="submit">SEND MESSAGE</button>
                         </form>
                     </div>
@@ -329,5 +241,8 @@
     <footer>
         <p>Copyright &copy; 2024 All rights reserved | design by <span>Student Name</span></p>
     </footer>
+    <script src="JS/offers.js"></script>
+    <script src="JS/gallery.js"></script>
+    <script src="JS/validition.js"></script>
 </body>
 </html>
