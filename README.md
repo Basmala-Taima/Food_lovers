@@ -18,4 +18,4 @@ A premium, fully responsive, and highly interactive restaurant website built fro
 * **JavaScript (Vanilla ES6+):** For the entire application logic, dynamic rendering, sliders, and form validation.
 
 ## 📸 Screenshots
-![Uploading image.png…]()
+<img width="1763" height="6246" alt="image" src="https://github.com/user-attachments/assets/9fb67539-fea5-466c-af7b-ad44d4fae7c9" />
