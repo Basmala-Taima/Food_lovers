@@ -3,7 +3,7 @@
 A premium, fully responsive, and highly interactive restaurant website built from scratch using pure web technologies. This project showcases advanced layout design and dynamic user interactions without relying on any external libraries or frameworks.
 
 ## 🚀 Live Demo
-[Click here to view the live website](https://basmala-taima.github.io/WEXY/)
+[Click here to view the live website](https://basmala-taima.github.io/Food_lovers/)
 
 ## ✨ Features
 * **Dynamic Content Rendering:** Menu items and food data are generated dynamically from JavaScript arrays/objects into the DOM, showing proficiency in handling data-driven UIs instead of hardcoded HTML.
